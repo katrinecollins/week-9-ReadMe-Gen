@@ -1,14 +1,14 @@
 
-# readme generator
+# ReadMe Generator
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-katrine
+Katrine Collins
 
 [https://github.com/katrinecollins](https://github.com/katrinecollins)
 
 ## Description
-a readme generator that creates a readme file from questions that are answered on the terminal with the help of node.js
+A ReadMedocumaent will be generated with information collected through prompts that are displayed in the terminal.
 
 ## Installation
 run
@@ -20,7 +20,7 @@ start
 GNU
 
 ## Contributing
-patrena and joem
+none
 
 ## Tests
 none

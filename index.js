@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const inquirer = require('inquirer')
 const fs = require('fs')
 
@@ -16,7 +16,7 @@ const getBadge = (license) => {
         return '[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt'
     }
 
-    // add more else if for other licenses
+
 
 
 }
@@ -55,7 +55,7 @@ ${obj.Questions}
 `;
 };
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = [
     {
         type: "input",
@@ -119,15 +119,15 @@ const questions = [
         message: "Please enter your e-mail address",
     },
 ];
-/* Pass your questions in here */
 
 
-// TODO: Create a function to write README file
+
+// Create a function to write README file
 function writeToFile(fileName, data) {
 
  }
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {
     inquirer
         .prompt(questions)
@@ -150,17 +150,3 @@ function init() {
 
 // Function call to initialize app
 init();
-
-
-// review
-
-// data types: number, string, boolean, arrays, objects
-// 1, "blue", true, 
-// [1, 6, 87, 3, 6] ---- ["blue", "red", "yellow"]
-/*
-    {
-        color: "blue",
-        size: 10,
-        isRaining: true
-    }
-*/
