@@ -2,12 +2,31 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
 
-const generateMarkdown = require('./utils/generateMarkdown.js');
+// const generateMarkdown = require('./utils/generateMarkdown.js');
+
+const getBadge = (license) => {
+
+    if(license ==  'MIT') {
+        return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+    } else if (license == 'Apache') {
+        return '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
+    } else if (license ==  'GNU') {
+        return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
+    } else if (license == 'Boost') {
+        return '[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt'
+    }
+
+    // add more else if for other licenses
+
+
+}
 
 
 const generatePage = (obj) => {
     return `
 # ${obj.title}
+
+${getBadge(obj.License)}
 
 ${obj.name}
 
@@ -25,14 +44,15 @@ ${obj.Usage}
 ## License
 ${obj.License}
 
-`;
+## Contributing
+${obj.Contributing}
 
-// #Contributing
-// #${obj.Contributing}
-// #Tests
-// #${obj.Tests}
-// #Questions
-// #${obj.Questions}
+## Tests
+${obj.Tests}
+
+## Questions
+${obj.Questions}
+`;
 };
 
 // TODO: Create an array of questions for user input
@@ -76,12 +96,27 @@ const questions = [
     {
         type: "list",
         name: "License",
-        message: "Which is your license?",
+        message: "Please choose your license?",
         choices: [
             "MIT",
             "Apache",
             "GNU",
-            "Bash"],
+            "Boost"],
+    },
+    {
+        type: "input",
+        name: "Contributing",
+        message: "Please list any contributions to this project"
+    },
+    {
+        type: "input",
+        name: "Tests",
+        message: "Please list any tests associated with this project"
+    },
+    {
+        type: "input",
+        name: "Questions",
+        message: "Please enter your e-mail address",
     },
 ];
 /* Pass your questions in here */
